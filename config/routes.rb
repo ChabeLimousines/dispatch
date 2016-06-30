@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root "comments#index"
+  root 'comments#index'
   resources :comments
+  get 'tags/:tag', to: 'comments#index', as: :tag
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
