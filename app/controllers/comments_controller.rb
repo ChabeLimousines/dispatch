@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     if params[:tag]
-      @comments = Comment.tagged_with(params[:tag])
+      @comments = Comment.page(params[:page]).per(50).tagged_with(params[:tag])
     else
-      @comments = Comment.all
+      @comments = Comment.order(created_at: :desc).page(params[:page]).per(50)
     end
   end
 
