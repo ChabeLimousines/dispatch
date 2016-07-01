@@ -3,16 +3,16 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="thumbnail">
-        <p>Tags:
-          <%= link_to 'All', root_path %>
+        <p><%= t('tags') %>:
+          <%= link_to t('all'), root_path %>
           <% tag_cloud Comment.tag_counts, %w[s m l] do |tag, css_class| %>
             <%= link_to tag.name, tag_path(tag.name), class: css_class %>
           <% end %>
         </p>
       </div>
       <div class="thumbnail">
-        <p>Auteurs:
-          <%= link_to 'All', root_path %>
+        <p><%= t('authors') %>:
+          <%= link_to t('all'), root_path %>
           <% tag_cloud Comment.author_counts, %w[s m l] do |tag, css_class| %>
             <%= link_to tag.name, tag_path(tag.name), class: css_class %>
           <% end %>
@@ -26,8 +26,8 @@
         <div class="thumbnail">
           <blockquote>
             <p><%= comment.content %></p>
-            <p>Tag: <%= comment.tag_list %></p>
-            <footer>Submited <%= time_ago_in_words(comment.created_at) %> by: <%= comment.author_list %></footer>
+            <p><%= t('tags') %>: <%= comment.tag_list %></p>
+            <footer><%= t('submitted') %><%= time_ago_in_words(comment.created_at) %><%= t('by') %>: <%= comment.author_list %></footer>
           </blockquote>
         </div>
       <% end %>
