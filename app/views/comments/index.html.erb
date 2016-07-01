@@ -31,6 +31,7 @@
           </blockquote>
         </div>
       <% end %>
+      <%= link_to t('new_comment'), new_comment_path, class: "btn btn-default navbar-btn navbar-right" %>
       <%= paginate @comments %>
     </div>
   </div>
