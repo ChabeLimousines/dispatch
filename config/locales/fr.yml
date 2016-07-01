@@ -4,7 +4,7 @@ fr:
       comment:
         content: "Message"
         author_list: "Auteur"
-        tag_list: "Mots clés (séparer les par des ,)"
+        tag_list: "Mots clés (séparez les par des ,)"
   datetime:
     distance_in_words:
       half_a_minute: "il y a 30 secondes"
