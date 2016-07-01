@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h1 class="text-center">New Comment</h1>
+      <h1 class="text-center"><%= t('new_comment') %></h1>
       <%= form_for(@comment) do |f| %>
         <% if @comment.errors.any? %>
           <div id="error_explanation">
@@ -14,13 +14,12 @@
           </div>
         <% end %>
         <div class="field">
-          <%= f.label :content %>
           <%= f.text_area :content, class: "form-control", rows: "10" %>
         </div>
         <div class="row">
           <div class="col-md-6">
             <div class="field">
-              <%= f.label :author %><br>
+              <%= f.label :author_list %><br>
               <%= f.text_field :author_list, class: "form-control" %>
             </div>
           </div>
@@ -38,7 +37,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <%= link_to 'Back', comments_path, class: "btn btn-default" %>
+            <%= link_to t('back'), comments_path, class: "btn btn-default" %>
           </div>
         </div>
       <% end %>
