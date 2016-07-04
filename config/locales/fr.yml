@@ -1,10 +1,19 @@
 fr:
   activerecord:
+    errors:
+      models:
+        comment:
+          attributes:
+            author_list:
+              blank: "ne peux pas être vide"
+            content:
+              blank: "ne peux pas être vide"
     attributes:
       comment:
         content: "Message"
         author_list: "Auteur"
         tag_list: "Mots clés (séparez les par des ,)"
+
   datetime:
     distance_in_words:
       half_a_minute: "il y a 30 secondes"
@@ -48,6 +57,7 @@ fr:
       hour:   "heure"
       minute: "Minute"
       second: "Secondes"
+  prohibited_this_comment_from_being_saved: "ce commentaire ne peux pas être enregistré"
   authors: "Auteurs"
   submitted: "Soumis "
   tags: "Mots clés"
@@ -58,3 +68,6 @@ fr:
   helpers:
     submit:
       create: "Ajouter commentaire"
+  comments:
+    form:
+      error: "erreur"
