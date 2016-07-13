@@ -1,4 +1,12 @@
 class CommentsController < ApplicationController
+before_filter :authenticate
+
+  def authenticate
+    authenticate_or_request_with_http_basic('dispatch.chabe.fr') do |username, password|
+      md5_of_password = Digest::MD5.hexdigest(password)
+      username == 'dispatch' && md5_of_password == '1e032860ddf96ae3420985dc2191207d'
+    end
+  end
 
   def index
     if params[:tag]
