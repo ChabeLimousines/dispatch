@@ -44,8 +44,15 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Capistrano is a framework for building automated deployment scripts
+  gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
 end
 # tag
 gem 'acts-as-taggable-on', '~> 3.4'
 # pagination
 gem 'kaminari'
+gem 'puma'
